@@ -8,7 +8,11 @@
     p5.createCanvas(400, 400);
 
     p5.loadImage(cardPath, (img) => {
-      image(img, 0, 0);
+      p5.image(img, 0, 0);
+    });
+
+    p5.loadImage(trainerPath, (img) => {
+      p5.image(img, 0, 0);
     });
   }
 

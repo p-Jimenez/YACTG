@@ -1,4 +1,5 @@
 import preprocess from "svelte-preprocess";
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
@@ -10,6 +11,10 @@ const config = {
 		preprocess({
 			postcss: true
 		})
+	],
+
+	plugins: [
+		viteCommonjs()
 	]
 };
 
