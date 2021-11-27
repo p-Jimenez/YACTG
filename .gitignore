@@ -76,5 +76,5 @@ typings/
 .fusebox/
 
 # Sveltekit output
-
 .svelte-kit/
+build

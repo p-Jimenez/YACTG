@@ -1,8 +1,9 @@
 <script>
   import P5 from "@macfja/svelte-p5";
 
+  const dev = process.env.NODE_ENV === 'development';
+
   export let color;
-  export let trainer;
   export let trainerName;
   export let cardPokemon;
   export let friendCode;
@@ -21,32 +22,13 @@
 
 
   function draw(p5) {
-    // p5.loadImage(cardPath, (img) => {
-    //   p5.image(img, 0, 0);
-    //   p5.loadImage(trainerPath, (img) => {
-    //     p5.image(img, 150, 32);
-    //   });
-    //   cardPokemon.forEach((pokemon, idx) => {
-    //       p5.loadImage(pokemon.img, (img) => {
-    //         img.resize(img.width / 2, img.height / 2);
-    //         p5.image(img, (idx%3 * 50), idx < 3 ? 40 : 80);
-    //       });
-    //     });
-    // });
 
     p5.image(cardBackground, 0, 0);
     p5.image(trainerImg, 150, 32);
 
-    // cardPokemon.forEach((pokemon, idx) => {
-    //   p5.loadImage(pokemon.img, (img) => { 
-    //     img.resize(img.width / 2, img.height / 2);
-    //     p5.image(img, (idx%3 * 50), idx < 3 ? 40 : 80);
-    //   });
-    // });
-
     pokemonList.forEach((img, idx) => {
       // img.resize(img.width / 2, img.height / 2);
-      p5.image(img, 1 + (idx%3 * 50), idx < 3 ? 26 : 29 + 36);
+      p5.image(img, 1 + (idx%3 * 52), idx < 3 ? 26 : 29 + 36);
     });
  
     p5.textSize(12);
@@ -64,14 +46,17 @@
       pokemonList.push(p5.loadImage(pokemon.icon));
     });
 
-    pressStart2p = p5.loadFont('/fonts/PressStart2P-Regular.ttf');
+    pressStart2p = p5.loadFont(fontPath);
 
   }
 
+  let cardPath = dev ? `/cards/${color}card.png` : `/YACTG/cards/${color}card.png`;
+  let trainerPath = dev ? `/sprites/workerice.png` : `/YACTG/sprites/workerice.png`;
+  let fontPath = dev ? `/fonts/PressStart2P-Regular.ttf` : `/YACTG/fonts/PressStart2P-Regular.ttf`;
 
 
-  let cardPath = `/cards/${color}card.png`;
-  let trainerPath = `sprites/workerice.png`;
+  // let cardPath = `${dev ? '' : '/YACTG'}/cards/${color}card.png`;
+  // let trainerPath = `${dev ? '' : '/YACTG'}/sprites/workerice.png`; //placeholder
 </script>
 
 
