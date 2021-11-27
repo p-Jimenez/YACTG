@@ -14,7 +14,8 @@ export const fetchPokemon = async () => {
             loadedPokemon.push({
                 name: pokemon.name,
                 url: pokemon.url,
-                img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
+                img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
+                icon: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/${index + 1}.png`
             });
         });
 
