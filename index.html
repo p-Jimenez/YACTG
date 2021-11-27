@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+
+		
+
+		<link rel="modulepreload" href="/_app/start-b852c2c0.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-6e90b4fc.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-355347a7.js">
+		<link rel="modulepreload" href="/_app/pages/index.svelte-626baf1d.js">
+		<link rel="stylesheet" href="/_app/assets/start-464e9d0a.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-9a174255.css">
+
+		<script type="module">
+			import { start } from "/_app/start-b852c2c0.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/pages/__layout.svelte-355347a7.js"),
+						import("/_app/pages/index.svelte-626baf1d.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002F",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<main><h1 class="text-gray-200">Yet Another Trainer Card Generator</h1>
+
+<div class="h-40">
+
+<div></div></div>
+
+<div class="tabs tabs-boxed"><a class="tab tab-active">Trainer</a>
+    <a class="tab ">Pokémon</a>
+    <a class="tab ">Badges</a>
+    <a class="tab ">Background</a></div>
+
+Trainers
+<div class="form-control"><labe class="label">Name</labe>
+    <input class="input input-bordered" value=""></div>
+<div class="form-control"><label class="label">Friend code</label>
+    <input class="input input-bordered"></div>
+
+
+
+</main>
+
+
+
+			
+		</div>
+	</body>
+</html>
